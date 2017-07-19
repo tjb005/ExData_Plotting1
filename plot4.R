@@ -2,7 +2,7 @@
 # Tim B
 
 ## Confirm ExData_Plotting1 data is in working directory
-if(dir.exists("./ExData_Plotting1")){
+if(file.exists("./household_power_consumption.txt")){
   
   ## Install Missing Packages
   list.of.packages <- c("dplyr", "tidyr", "lubridate")
@@ -15,7 +15,7 @@ if(dir.exists("./ExData_Plotting1")){
   library("lubridate")
   
   # Read data
-  hpc<-as.data.frame(read.table("./ExData_Plotting1/household_power_consumption.txt", header=TRUE, sep=";", na.strings="?"))
+  hpc<-as.data.frame(read.table("./household_power_consumption.txt", header=TRUE, sep=";", na.strings="?"))
   
   # Filter data
   hpc<-tbl_df(hpc)
